@@ -1,11 +1,21 @@
 ﻿using System;
 
+using CoreLocation;
+
 namespace testLocation.iOS
 {
-	public class LocationUpdatedEventArgs
+	public class LocationUpdatedEventArgs : EventArgs
 	{
-		public LocationUpdatedEventArgs ()
+		CLLocation location;
+
+		public LocationUpdatedEventArgs(CLLocation location)
 		{
+			this.location = location;
+		}
+
+		public CLLocation Location
+		{
+			get { return location; }
 		}
 	}
 }
